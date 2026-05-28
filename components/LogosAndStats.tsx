@@ -1,13 +1,42 @@
 "use client";
 
 const logos = [
-  { name: "Next.js", color: "#ffffff", icon: "▲" },
-  { name: "n8n", color: "#EA4B71", icon: "⚡" },
-  { name: "Twilio", color: "#F22F46", icon: "◎" },
-  { name: "Anthropic", color: "#CC785C", icon: "◈" },
-  { name: "Make.com", color: "#6D00CC", icon: "⬡" },
-  { name: "Netlify", color: "#00C7B7", icon: "◻" },
-  { name: "Google Calendar", color: "#4285F4", icon: "◆" },
+  {
+    name: "Next.js",
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    invert: true,
+  },
+  {
+    name: "n8n",
+    img: "https://avatars.githubusercontent.com/u/45487711?s=200&v=4",
+    invert: false,
+  },
+  {
+    name: "Twilio",
+    img: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twilio.svg",
+    invert: false,
+    color: "#F22F46",
+  },
+  {
+    name: "Anthropic",
+    img: "https://avatars.githubusercontent.com/u/76263028?s=200&v=4",
+    invert: false,
+  },
+  {
+    name: "Make.com",
+    img: "https://images.ctfassets.net/qqlj6g4ee76j/1RmS7nlGFUcMxQlRpFnJKg/7e49e7b40d6e2e59282d14b694e97b87/Make-Logo-RGB.png",
+    invert: false,
+  },
+  {
+    name: "Netlify",
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
+    invert: false,
+  },
+  {
+    name: "Google Calendar",
+    img: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg",
+    invert: false,
+  },
 ];
 
 const stats = [
@@ -23,9 +52,20 @@ export default function LogosAndStats() {
       <div className="px-8 py-6" style={{ borderTop: "1px solid var(--faint)", borderBottom: "1px solid var(--faint)" }}>
         <div className="flex gap-10 items-center justify-center flex-wrap">
           {logos.map((l) => (
-            <div key={l.name} className="flex items-center gap-2" style={{ opacity: 0.8 }}>
-              <span style={{ color: l.color, fontSize: "16px" }}>{l.icon}</span>
-              <span className="text-[12px] font-medium tracking-[0.02em]" style={{ color: l.color }}>{l.name}</span>
+            <div key={l.name} className="flex items-center gap-2" style={{ opacity: 0.85 }}>
+              <img
+                src={l.img}
+                alt={l.name}
+                width={20}
+                height={20}
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  objectFit: "contain",
+                  filter: l.invert ? "invert(1)" : "none",
+                }}
+              />
+              <span className="text-[12px] font-medium tracking-[0.02em] text-white">{l.name}</span>
             </div>
           ))}
         </div>
