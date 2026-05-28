@@ -1,3 +1,5 @@
+"use client";
+
 const services = [
   {
     num: "01 / WEBSITE",

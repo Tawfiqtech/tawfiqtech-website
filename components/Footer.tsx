@@ -1,3 +1,5 @@
+"use client";
+
 const links = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#how" },

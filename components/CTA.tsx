@@ -1,3 +1,5 @@
+"use client";
+
 const badges = ["No commitment", "Free 30-min call", "Metro Vancouver", "Fixed pricing"];
 
 export default function CTA() {

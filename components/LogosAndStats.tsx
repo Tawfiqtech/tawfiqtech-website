@@ -1,3 +1,5 @@
+"use client";
+
 const logos = [
   "▲ Next.js", "⚡ n8n", "◎ Twilio",
   "◈ Anthropic", "⬡ Make.com", "◻ Netlify", "◆ Google Calendar",
