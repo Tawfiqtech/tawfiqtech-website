@@ -39,19 +39,19 @@ export default function Hero() {
       {/* Grid texture */}
       <div className="absolute inset-0 pointer-events-none grid-texture" />
 
-      {/* Connector lines */}
-      <div className="absolute top-[37%] left-0 w-[20%] h-px pointer-events-none"
+      {/* Connector lines — hidden on mobile */}
+      <div className="hidden md:block absolute top-[37%] left-0 w-[20%] h-px pointer-events-none"
         style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.07))" }} />
-      <div className="absolute top-[32%] right-0 w-[22%] h-px pointer-events-none"
+      <div className="hidden md:block absolute top-[32%] right-0 w-[22%] h-px pointer-events-none"
         style={{ background: "linear-gradient(270deg, transparent, rgba(255,255,255,0.07))" }} />
-      <div className="absolute bottom-[32%] left-0 w-[15%] h-px pointer-events-none"
+      <div className="hidden md:block absolute bottom-[32%] left-0 w-[15%] h-px pointer-events-none"
         style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.05))" }} />
-      <div className="absolute bottom-[29%] right-0 w-[18%] h-px pointer-events-none"
+      <div className="hidden md:block absolute bottom-[29%] right-0 w-[18%] h-px pointer-events-none"
         style={{ background: "linear-gradient(270deg, transparent, rgba(255,255,255,0.05))" }} />
 
-      {/* Floating nodes */}
+      {/* Floating nodes — hidden on mobile */}
       {nodes.map((node) => (
-        <div key={node.name} className={`absolute flex items-center gap-[9px] ${node.pos}`}>
+        <div key={node.name} className={`hidden md:flex absolute items-center gap-[9px] ${node.pos}`}>
           <div
             className="w-9 h-9 rounded-full flex items-center justify-center text-[13px] flex-shrink-0"
             style={{
@@ -69,9 +69,9 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Live chip */}
+      {/* Live chip — hidden on mobile */}
       <div
-        className="absolute top-[30%] right-[13%] flex items-center gap-[6px] text-[11px] text-[var(--dim)]"
+        className="hidden md:flex absolute top-[30%] right-[13%] items-center gap-[6px] text-[11px] text-[var(--dim)]"
         style={{
           background: "rgba(14,14,14,0.9)",
           border: "1px solid rgba(255,255,255,0.08)",
@@ -83,9 +83,9 @@ export default function Hero() {
         AI receptionist active
       </div>
 
-      {/* Stat chip */}
+      {/* Stat chip — hidden on mobile */}
       <div
-        className="absolute bottom-[33%] left-[13%]"
+        className="hidden md:block absolute bottom-[33%] left-[13%]"
         style={{
           background: "rgba(14,14,14,0.9)",
           border: "1px solid rgba(255,255,255,0.07)",
@@ -97,15 +97,42 @@ export default function Hero() {
         <div className="text-[10px] text-[var(--dimmer)] mt-[2px] tracking-[0.04em]">LEAD CAPTURE RATE</div>
       </div>
 
-      {/* Play button */}
+      {/* Play button — hidden on mobile */}
       <div
-        className="absolute top-[17%] left-1/2 -translate-x-1/2 w-[38px] h-[38px] rounded-full flex items-center justify-center cursor-pointer text-[11px] text-[var(--dim)] transition-colors duration-200"
+        className="hidden md:flex absolute top-[17%] left-1/2 -translate-x-1/2 w-[38px] h-[38px] rounded-full items-center justify-center cursor-pointer text-[11px] text-[var(--dim)] transition-colors duration-200"
         style={{
           background: "rgba(255,255,255,0.05)",
           border: "1px solid rgba(255,255,255,0.09)",
         }}
       >
         ▶
+      </div>
+
+      {/* Mobile stat strip — visible only on mobile */}
+      <div className="flex md:hidden items-center gap-4 mb-6 w-full justify-center flex-wrap">
+        <div
+          className="flex items-center gap-[6px] text-[11px] text-[var(--dim)]"
+          style={{
+            background: "rgba(14,14,14,0.9)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "8px",
+            padding: "7px 11px",
+          }}
+        >
+          <div className="w-[6px] h-[6px] rounded-full bg-[#4ade80] flex-shrink-0 animate-pulse-slow" />
+          AI receptionist active
+        </div>
+        <div
+          style={{
+            background: "rgba(14,14,14,0.9)",
+            border: "1px solid rgba(255,255,255,0.07)",
+            borderRadius: "8px",
+            padding: "7px 11px",
+          }}
+        >
+          <span className="text-[15px] font-semibold tracking-tight text-white">98%</span>
+          <span className="text-[10px] text-[var(--dimmer)] ml-[5px] tracking-[0.04em]">LEAD CAPTURE RATE</span>
+        </div>
       </div>
 
       {/* Badge */}
@@ -130,7 +157,7 @@ export default function Hero() {
       {/* Headline */}
       <h1
         className="text-center font-semibold mb-5 max-w-[840px] animate-fade-up-delay-1"
-        style={{ fontSize: "clamp(42px, 6.5vw, 80px)", letterSpacing: "-0.038em", lineHeight: "1.04" }}
+        style={{ fontSize: "clamp(38px, 6.5vw, 80px)", letterSpacing: "-0.038em", lineHeight: "1.04" }}
       >
         Your website.{" "}
         <br />
@@ -203,7 +230,7 @@ export default function Hero() {
         >
           ↓
         </div>
-        <span>01 / 04 · Scroll down</span>
+        <span className="hidden sm:inline">01 / 04 · Scroll down</span>
       </div>
 
       <div className="absolute bottom-8 right-8 text-[10px] text-[var(--dimmer)] tracking-[0.08em]">
