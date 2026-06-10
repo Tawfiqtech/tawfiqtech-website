@@ -49,10 +49,11 @@ const stats = [
 export default function LogosAndStats() {
   return (
     <>
-      <div className="px-8 py-6" style={{ borderTop: "1px solid var(--faint)", borderBottom: "1px solid var(--faint)" }}>
-        <div className="flex gap-10 items-center justify-center flex-wrap">
+      {/* Logo bar */}
+      <div className="px-6 py-6" style={{ borderTop: "1px solid var(--faint)", borderBottom: "1px solid var(--faint)" }}>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-wrap gap-x-8 gap-y-4 items-center justify-center md:justify-center">
           {logos.map((l) => (
-            <div key={l.name} className="flex items-center gap-2" style={{ opacity: 0.85 }}>
+            <div key={l.name} className="flex items-center gap-2 justify-center" style={{ opacity: 0.85 }}>
               <img
                 src={l.img}
                 alt={l.name}
@@ -65,17 +66,32 @@ export default function LogosAndStats() {
                   filter: l.invert ? "invert(1)" : "none",
                 }}
               />
-              <span className="text-[12px] font-medium tracking-[0.02em] text-white">{l.name}</span>
+              <span className="text-[12px] font-medium tracking-[0.02em] text-white whitespace-nowrap">{l.name}</span>
             </div>
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-4" style={{ borderBottom: "1px solid var(--faint)" }}>
+
+      {/* Stats grid: 2x2 on mobile, 4-col on desktop */}
+      <div
+        className="grid grid-cols-2 md:grid-cols-4"
+        style={{ borderBottom: "1px solid var(--faint)" }}
+      >
         {stats.map((s, i) => (
-          <div key={i} className="px-8 py-10 relative overflow-hidden" style={{ borderRight: i < stats.length - 1 ? "1px solid var(--faint)" : "none" }}>
-            <div className="absolute top-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-            <div className="font-semibold text-white leading-none mb-2" style={{ fontSize: "40px", letterSpacing: "-0.04em" }}>
-              {s.val}<span className="text-[22px] text-[var(--dimmer)]">{s.unit}</span>
+          <div
+            key={i}
+            className="px-6 py-8 md:px-8 md:py-10 relative overflow-hidden"
+            style={{
+              borderRight: (i % 2 === 0) ? "1px solid var(--faint)" : "none",
+              borderBottom: i < 2 ? "1px solid var(--faint)" : "none",
+            }}
+          >
+            <div
+              className="md:block absolute top-0 left-0 right-0 h-px pointer-events-none"
+              style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
+            />
+            <div className="font-semibold text-white leading-none mb-2" style={{ fontSize: "clamp(28px, 5vw, 40px)", letterSpacing: "-0.04em" }}>
+              {s.val}<span className="text-[18px] md:text-[22px] text-[var(--dimmer)]">{s.unit}</span>
             </div>
             <div className="text-[12px] text-[var(--dim)] font-light leading-relaxed">{s.desc}</div>
           </div>
