@@ -25,7 +25,7 @@ export default function Testimonials() {
   return (
     <div
       id="results"
-      className="py-28 px-8 relative overflow-hidden"
+      className="py-20 md:py-28 px-6 md:px-8 relative overflow-hidden"
       style={{ borderTop: "1px solid var(--faint)" }}
     >
       {/* sage glow right */}
@@ -41,22 +41,23 @@ export default function Testimonials() {
           Client results
         </p>
         <h2
-          className="font-semibold mb-14 text-center"
+          className="font-semibold mb-10 md:mb-14 text-center"
           style={{ fontSize: "clamp(28px, 4vw, 52px)", letterSpacing: "-0.03em", lineHeight: "1.1" }}
         >
           Built for businesses{" "}
           <span style={{ color: "rgba(255,255,255,0.18)" }}>like yours.</span>
         </h2>
 
+        {/* Cards: single col on mobile, 3-col on desktop */}
         <div
-          className="grid grid-cols-3 gap-px rounded-[18px] overflow-hidden"
+          className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-[18px] overflow-hidden"
           style={{ background: "var(--faint)" }}
         >
           {testimonials.map((t) => (
             <div
               key={t.name}
               className="relative overflow-hidden"
-              style={{ background: "var(--bg)", padding: "2.5rem 2.25rem" }}
+              style={{ background: "var(--bg)", padding: "2rem 1.75rem" }}
             >
               {/* watermark quote */}
               <div
