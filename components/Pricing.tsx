@@ -52,7 +52,7 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-28 px-8 max-w-[1100px] mx-auto">
+    <section id="pricing" className="py-20 md:py-28 px-6 md:px-8 max-w-[1100px] mx-auto">
       <p className="text-[10px] tracking-[0.12em] uppercase text-[var(--dimmer)] mb-[14px]">
         Pricing
       </p>
@@ -64,20 +64,20 @@ export default function Pricing() {
         <br />
         <span style={{ color: "rgba(255,255,255,0.18)" }}>No surprises.</span>
       </h2>
-      <p className="text-[14px] text-[var(--dim)] font-light leading-[1.72] max-w-[400px] mb-12">
+      <p className="text-[14px] text-[var(--dim)] font-light leading-[1.72] max-w-[400px] mb-10 md:mb-12">
         Every package is a flat rate. You know exactly what you&apos;re getting before we start.
       </p>
 
-      {/* Cards */}
+      {/* Cards: single col on mobile, 3-col on desktop */}
       <div
-        className="grid grid-cols-3 gap-px rounded-[18px] overflow-hidden"
+        className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-[18px] overflow-hidden"
         style={{ background: "var(--faint)" }}
       >
         {tiers.map((t) => (
           <div
             key={t.name}
             className="flex flex-col relative overflow-hidden"
-            style={{ background: t.featured ? "#070707" : "var(--bg)", padding: "2.25rem 2rem" }}
+            style={{ background: t.featured ? "#070707" : "var(--bg)", padding: "2rem 1.75rem" }}
           >
             {t.featured && (
               <div
@@ -88,7 +88,7 @@ export default function Pricing() {
             <p className="text-[10px] text-[var(--dimmer)] tracking-[0.1em] uppercase mb-4">{t.tier}</p>
             <p className="font-semibold mb-[6px]" style={{ fontSize: "20px", letterSpacing: "-0.025em" }}>{t.name}</p>
             <p className="text-[12.5px] text-[var(--dim)] font-light leading-[1.65] mb-6">{t.desc}</p>
-            <p className="font-semibold leading-none mb-1" style={{ fontSize: "44px", letterSpacing: "-0.04em" }}>{t.price}</p>
+            <p className="font-semibold leading-none mb-1" style={{ fontSize: "clamp(36px, 8vw, 44px)", letterSpacing: "-0.04em" }}>{t.price}</p>
             <p className="text-[11px] text-[var(--dimmer)] mb-6">{t.meta}</p>
             <hr style={{ border: "none", borderTop: "1px solid var(--faint)", marginBottom: "1.25rem" }} />
             <p className="text-[10px] text-[var(--dimmer)] tracking-[0.08em] uppercase mb-[10px]">{t.featHdr}</p>
@@ -113,13 +113,13 @@ export default function Pricing() {
         ))}
       </div>
 
-      {/* Retainer */}
+      {/* Retainer: stacks vertically on mobile */}
       <div
-        className="rounded-[14px] flex items-center justify-between gap-8 mt-px relative overflow-hidden"
+        className="rounded-[14px] flex flex-col md:flex-row md:items-center md:justify-between gap-5 md:gap-8 mt-px relative overflow-hidden"
         style={{
           background: "var(--faint)",
           border: "1px solid rgba(255,255,255,0.05)",
-          padding: "2rem 2.25rem",
+          padding: "1.75rem",
         }}
       >
         <div
@@ -133,8 +133,8 @@ export default function Pricing() {
             Hosting, uptime monitoring, automation upkeep, content updates, and priority support. Everything stays running without you thinking about it.
           </p>
         </div>
-        <div className="text-right flex-shrink-0">
-          <p className="font-semibold" style={{ fontSize: "30px", letterSpacing: "-0.03em" }}>$150–$250</p>
+        <div className="md:text-right flex-shrink-0">
+          <p className="font-semibold" style={{ fontSize: "clamp(24px, 5vw, 30px)", letterSpacing: "-0.03em" }}>$150–$250</p>
           <p className="text-[11px] text-[var(--dimmer)] mt-[3px]">per month</p>
         </div>
       </div>
