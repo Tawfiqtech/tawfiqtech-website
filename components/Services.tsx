@@ -33,7 +33,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-28 px-8 max-w-[1100px] mx-auto">
+    <section id="services" className="py-20 md:py-28 px-6 md:px-8 max-w-[1100px] mx-auto">
       <p className="text-[10px] tracking-[0.12em] uppercase text-[var(--dimmer)] mb-[14px]">
         What we build
       </p>
@@ -45,19 +45,19 @@ export default function Services() {
         <br />
         <span style={{ color: "rgba(255,255,255,0.18)" }}>One clear goal.</span>
       </h2>
-      <p className="text-[14px] text-[var(--dim)] font-light leading-[1.72] max-w-[400px] mb-12">
+      <p className="text-[14px] text-[var(--dim)] font-light leading-[1.72] max-w-[400px] mb-10 md:mb-12">
         Built to solve one problem: local businesses missing leads because they&apos;re too busy to answer them.
       </p>
 
       <div
-        className="grid grid-cols-2 gap-px rounded-[18px] overflow-hidden"
+        className="grid grid-cols-1 md:grid-cols-2 gap-px rounded-[18px] overflow-hidden"
         style={{ background: "var(--faint)" }}
       >
         {services.map((svc) => (
           <div
             key={svc.name}
             className="group relative overflow-hidden transition-colors duration-250 cursor-default"
-            style={{ background: "var(--bg)", padding: "2.75rem 2.5rem" }}
+            style={{ background: "var(--bg)", padding: "2rem 1.75rem" }}
             onMouseEnter={(e) => (e.currentTarget.style.background = "#070707")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "var(--bg)")}
           >
@@ -74,10 +74,10 @@ export default function Services() {
               style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.10), transparent)" }}
             />
 
-            <p className="text-[10px] text-[var(--dimmer)] tracking-[0.1em] mb-8">{svc.num}</p>
+            <p className="text-[10px] text-[var(--dimmer)] tracking-[0.1em] mb-6 md:mb-8">{svc.num}</p>
 
             <div
-              className="w-[42px] h-[42px] rounded-[10px] flex items-center justify-center text-[18px] mb-5"
+              className="w-[42px] h-[42px] rounded-[10px] flex items-center justify-center text-[18px] mb-4 md:mb-5"
               style={{
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.07)",
@@ -94,7 +94,7 @@ export default function Services() {
             </p>
             <p className="text-[13px] text-[var(--dim)] font-light leading-[1.72]">{svc.desc}</p>
 
-            <div className="flex flex-wrap gap-[5px] mt-6">
+            <div className="flex flex-wrap gap-[5px] mt-5 md:mt-6 pb-8 md:pb-10">
               {svc.tags.map((tag) => (
                 <span
                   key={tag}
@@ -111,7 +111,7 @@ export default function Services() {
             </div>
 
             <span
-              className="absolute bottom-10 right-10 text-[18px] text-[var(--dimmer)] transition-all duration-200 group-hover:text-[var(--dim)] group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
+              className="absolute bottom-6 right-7 md:bottom-10 md:right-10 text-[18px] text-[var(--dimmer)] transition-all duration-200 group-hover:text-[var(--dim)] group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
             >
               ↗
             </span>
