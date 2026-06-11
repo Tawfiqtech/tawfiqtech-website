@@ -12,19 +12,8 @@ const logos = [
     invert: false,
   },
   {
-    name: "Twilio",
-    img: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twilio.svg",
-    invert: false,
-    color: "#F22F46",
-  },
-  {
-    name: "Anthropic",
-    img: "https://avatars.githubusercontent.com/u/76263028?s=200&v=4",
-    invert: false,
-  },
-  {
-    name: "Make.com",
-    img: "https://images.ctfassets.net/qqlj6g4ee76j/1RmS7nlGFUcMxQlRpFnJKg/7e49e7b40d6e2e59282d14b694e97b87/Make-Logo-RGB.png",
+    name: "Claude",
+    img: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/claude.png",
     invert: false,
   },
   {
@@ -35,6 +24,11 @@ const logos = [
   {
     name: "Google Calendar",
     img: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg",
+    invert: false,
+  },
+  {
+    name: "Google Sheets",
+    img: "https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg",
     invert: false,
   },
 ];
@@ -49,24 +43,23 @@ const stats = [
 export default function LogosAndStats() {
   return (
     <>
-      {/* Logo bar */}
+      {/* Logo bar — icons only, no labels */}
       <div className="px-6 py-6" style={{ borderTop: "1px solid var(--faint)", borderBottom: "1px solid var(--faint)" }}>
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-wrap gap-x-8 gap-y-4 items-center justify-center md:justify-center">
+        <div className="flex flex-wrap gap-x-8 gap-y-4 items-center justify-center">
           {logos.map((l) => (
-            <div key={l.name} className="flex items-center gap-2 justify-center" style={{ opacity: 0.85 }}>
+            <div key={l.name} className="flex items-center justify-center" style={{ opacity: 0.75 }}>
               <img
                 src={l.img}
                 alt={l.name}
-                width={20}
-                height={20}
+                width={24}
+                height={24}
                 style={{
-                  width: "20px",
-                  height: "20px",
+                  width: "24px",
+                  height: "24px",
                   objectFit: "contain",
                   filter: l.invert ? "invert(1)" : "none",
                 }}
               />
-              <span className="text-[12px] font-medium tracking-[0.02em] text-white whitespace-nowrap">{l.name}</span>
             </div>
           ))}
         </div>
