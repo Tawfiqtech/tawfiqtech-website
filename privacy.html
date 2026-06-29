@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — TawfiqTech</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --bg: #000000;
+    --surface: #0D0D0D;
+    --surface-2: #161616;
+    --border: rgba(255,255,255,0.08);
+    --border-light: rgba(255,255,255,0.05);
+    --white: #FFFFFF;
+    --grey: rgba(255,255,255,0.55);
+    --grey-dim: rgba(255,255,255,0.30);
+    --glow: rgba(30, 80, 50, 0.45);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Glow top-right like the main site */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky; top: 16px; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 900px; margin: 0 auto;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 10px 10px 24px;
+    margin-top: 16px;
+  }
+
+  .logo {
+    font-size: 14px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--white); text-decoration: none;
+  }
+
+  .nav-right { display: flex; align-items: center; gap: 8px; }
+
+  .nav-link {
+    font-size: 13px; color: var(--grey); text-decoration: none;
+    padding: 6px 14px; border-radius: 999px;
+    transition: color 0.15s;
+  }
+  .nav-link:hover { color: var(--white); }
+
+  .nav-btn {
+    font-size: 13px; font-weight: 600;
+    background: var(--white); color: var(--bg);
+    border: none; border-radius: 999px;
+    padding: 8px 20px; cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .nav-btn:hover { opacity: 0.85; }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative; z-index: 1;
+    max-width: 760px; margin: 0 auto;
+    padding: 80px 24px 64px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 12px; font-weight: 500; color: var(--grey);
+    margin-bottom: 32px;
+    letter-spacing: 0.04em;
+  }
+  .hero-badge span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #4ade80; display: inline-block;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .hero-meta {
+    display: flex; gap: 0; flex-wrap: wrap;
+    font-size: 13px; color: var(--grey-dim);
+  }
+  .hero-meta span {
+    padding-right: 16px; margin-right: 16px;
+    border-right: 1px solid var(--border);
+  }
+  .hero-meta span:last-child { border-right: none; }
+
+  /* ── Layout ── */
+  .container {
+    position: relative; z-index: 1;
+    max-width: 760px; margin: 0 auto;
+    padding: 64px 24px 96px;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 80px;
+    align-items: start;
+  }
+
+  @media (max-width: 680px) {
+    nav { margin: 12px; top: 12px; border-radius: 16px; }
+    .hero { padding: 56px 20px 48px; }
+    .container { grid-template-columns: 1fr; padding: 48px 20px 72px; }
+    .sidebar { display: none; }
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    position: sticky; top: 100px;
+  }
+
+  .sidebar-label {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--grey-dim); font-weight: 600;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .toc-link {
+    display: block; font-size: 13px; color: var(--grey-dim);
+    text-decoration: none; padding: 6px 0;
+    transition: color 0.15s;
+    border-left: 1px solid transparent;
+    padding-left: 14px; margin-left: -14px;
+  }
+  .toc-link:hover {
+    color: var(--white);
+    border-left-color: rgba(255,255,255,0.3);
+  }
+
+  /* ── Content ── */
+  .content section {
+    padding-bottom: 56px;
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .content section:last-child {
+    border-bottom: none; margin-bottom: 0; padding-bottom: 0;
+  }
+
+  .section-label {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--grey-dim); font-weight: 600; margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 22px; font-weight: 700;
+    letter-spacing: -0.02em; line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  p { color: var(--grey); margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { list-style: none; margin: 16px 0; }
+  ul li {
+    color: var(--grey);
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 14px;
+  }
+  ul li:last-child { border-bottom: none; }
+  ul li::before {
+    content: '';
+    width: 5px; height: 5px; border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    margin-top: 8px; shrink: 0; flex-shrink: 0;
+  }
+
+  strong { color: var(--white); font-weight: 600; }
+  a { color: var(--white); text-decoration: underline; text-decoration-color: var(--border); }
+  a:hover { text-decoration-color: var(--white); }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 20px;
+  }
+  .contact-card p { margin-bottom: 8px; font-size: 14px; }
+  .contact-card p:last-child { margin-bottom: 0; }
+  .contact-card .name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+
+  /* ── Footer ── */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border-light);
+    padding: 24px;
+    max-width: 760px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    font-size: 12px; color: var(--grey-dim);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">TawfiqTech</a>
+  <div class="nav-right">
+    <a href="/" class="nav-link">← Back to home</a>
+    <a href="/#contact" class="nav-btn">Get started</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">
+    <span></span>
+    Legal document
+  </div>
+  <h1>Privacy<br>Policy.</h1>
+  <div class="hero-meta">
+    <span>TawfiqTech</span>
+    <span>Metro Vancouver, BC</span>
+    <span>Effective June 27, 2026</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+
+    <section id="overview">
+      <p class="section-label">01 — Overview</p>
+      <h2>Our commitment to your privacy</h2>
+      <p>TawfiqTech ("we," "us," or "our") is a web design and AI automation agency based in Metro Vancouver, British Columbia, Canada. We are committed to protecting the personal information of our clients, leads, and website visitors in accordance with Canada's Anti-Spam Legislation (CASL) and the Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+      <p>This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
+    </section>
+
+    <section id="collect">
+      <p class="section-label">02 — What We Collect</p>
+      <h2>Information we collect</h2>
+      <p>We may collect the following types of personal information when you contact us, complete a lead form, or use our services:</p>
+      <ul>
+        <li><div><strong>Contact details</strong> — full name, email address, and phone number</div></li>
+        <li><div><strong>Business information</strong> — business name, type of industry, and location</div></li>
+        <li><div><strong>Communication history</strong> — messages, emails, and form submissions you send us</div></li>
+        <li><div><strong>Usage data</strong> — pages visited on our website, referral source, and device type</div></li>
+      </ul>
+      <p>We do not collect sensitive personal information such as financial data, government IDs, or health information.</p>
+    </section>
+
+    <section id="use">
+      <p class="section-label">03 — How We Use It</p>
+      <h2>How we use your information</h2>
+      <ul>
+        <li><div>To respond to inquiries and follow up on lead form submissions</div></li>
+        <li><div>To provide web design, AI automation, and related services to clients</div></li>
+        <li><div>To send service updates, proposals, and invoices to active clients</div></li>
+        <li><div>To send occasional marketing communications — <strong>only with your explicit consent</strong></div></li>
+        <li><div>To improve our website and understand how visitors find us</div></li>
+      </ul>
+      <p>We will <strong>never sell, rent, or trade your personal information</strong> to any third party.</p>
+    </section>
+
+    <section id="casl">
+      <p class="section-label">04 — CASL Compliance</p>
+      <h2>Marketing &amp; CASL</h2>
+      <p>We comply fully with Canada's Anti-Spam Legislation (CASL). This means:</p>
+      <ul>
+        <li><div>We only send commercial electronic messages with your <strong>express or implied consent</strong></div></li>
+        <li><div>Every marketing message includes a clear and easy way to unsubscribe</div></li>
+        <li><div>We honour all unsubscribe requests within <strong>10 business days</strong></div></li>
+        <li><div>We keep records of how and when consent was obtained</div></li>
+      </ul>
+      <p>If you submitted a lead form through one of our Facebook or Instagram ads, your consent to receive follow-up communications was obtained at the time of submission. You may withdraw that consent at any time by contacting us.</p>
+    </section>
+
+    <section id="sharing">
+      <p class="section-label">05 — Sharing</p>
+      <h2>Who we share your data with</h2>
+      <p>We do not sell or share your personal information with third parties for their own marketing purposes. We may share limited information with trusted service providers including:</p>
+      <ul>
+        <li><div><strong>Meta (Facebook/Instagram)</strong> — for ad campaign management and lead forms</div></li>
+        <li><div><strong>Google</strong> — for analytics and calendar integrations</div></li>
+        <li><div><strong>Netlify / Supabase</strong> — for website hosting and database services</div></li>
+        <li><div><strong>Twilio</strong> — for SMS and voice communication automations</div></li>
+      </ul>
+    </section>
+
+    <section id="retention">
+      <p class="section-label">06 — Retention</p>
+      <h2>How long we keep your data</h2>
+      <p>We retain your personal information only as long as necessary for the purposes described in this policy or as required by law. Lead and client information is typically retained for up to 3 years. You may request deletion of your information at any time.</p>
+    </section>
+
+    <section id="rights">
+      <p class="section-label">07 — Your Rights</p>
+      <h2>Your rights</h2>
+      <ul>
+        <li><div>Access the personal information we hold about you</div></li>
+        <li><div>Request correction of inaccurate information</div></li>
+        <li><div>Withdraw consent for marketing communications at any time</div></li>
+        <li><div>Request deletion of your personal information</div></li>
+        <li><div>File a complaint with the Office of the Privacy Commissioner of Canada</div></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <p class="section-label">08 — Contact</p>
+      <h2>Contact us</h2>
+      <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please reach out. We will respond to all privacy-related requests within <strong>10 business days</strong>.</p>
+      <div class="contact-card">
+        <p class="name">TawfiqTech</p>
+        <p>Metro Vancouver, British Columbia, Canada</p>
+        <p>Email: <a href="mailto:hello@tawfiqtech.ca">hello@tawfiqtech.ca</a></p>
+        <p>Website: <a href="https://tawfiqtech.ca">tawfiqtech.ca</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <aside class="sidebar">
+    <p class="sidebar-label">On this page</p>
+    <a href="#overview" class="toc-link">Overview</a>
+    <a href="#collect" class="toc-link">What we collect</a>
+    <a href="#use" class="toc-link">How we use it</a>
+    <a href="#casl" class="toc-link">CASL compliance</a>
+    <a href="#sharing" class="toc-link">Who we share with</a>
+    <a href="#retention" class="toc-link">Retention</a>
+    <a href="#rights" class="toc-link">Your rights</a>
+    <a href="#contact" class="toc-link">Contact us</a>
+  </aside>
+</div>
+
+<footer>
+  <span>© 2026 TawfiqTech. All rights reserved.</span>
+  <span>Metro Vancouver, BC, Canada</span>
+</footer>
+
+</body>
+</html>
